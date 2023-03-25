@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<h2><img src="{% static 'img/cellphone.png' %}" style="height: 36px; wide: auto">Fale conosco</h2>
+
+<p>Envie-nos uma mensagem, que teremos todo o prazer em atendê-lo(a). </p>
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock conteudo %}
